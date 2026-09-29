@@ -1,0 +1,274 @@
+# Telecom Customer Churn Prediction Using Decision Tree
+
+A machine learning web application that predicts whether a telecom customer is likely to **churn (leave the service)** using a Decision Tree Classification model.
+
+The project includes data analysis and model training in Google Colab, followed by deployment of the trained model using a Flask web application.
+
+## Project Overview
+
+Customer churn refers to a customer leaving or stopping the use of a company's service.
+
+In this project, a Decision Tree Classifier is trained on a telecom customer dataset to predict whether a customer is likely to churn based on their account information, service plans, call usage, international usage, and customer service interactions.
+
+The trained model is then saved as a `.pkl` file and integrated into a Flask web application.
+
+## Features
+
+* Telecom customer churn prediction
+* Decision Tree Classification
+* Exploratory Data Analysis
+* Data preprocessing
+* Model evaluation
+* Feature importance analysis
+* Confusion matrix
+* Decision Tree visualization
+* Trained model saved using Pickle
+* Flask backend
+* HTML frontend
+* Interactive prediction through a web form
+
+## Technologies Used
+
+* Python
+* Google Colab
+* Pandas
+* NumPy
+* Scikit-learn
+* Matplotlib
+* Seaborn
+* Flask
+* HTML
+* Pickle
+
+## Dataset
+
+The project uses the **Telecom Customer Churn Dataset** available on Kaggle.
+
+Dataset:
+
+https://www.kaggle.com/code/mnassrib/customer-churn-prediction-telecom-churn-dataset/data
+
+The dataset contains customer account information, service plan details, call usage, international usage, and customer service information.
+
+The target variable is:
+
+```text
+Churn
+```
+
+Where:
+
+```text
+1 → Customer Churned
+0 → Customer Did Not Churn
+```
+
+## Machine Learning Model
+
+The project uses a **Decision Tree Classifier** with the following configuration:
+
+```python
+DecisionTreeClassifier(
+    criterion="gini",
+    max_depth=5,
+    min_samples_split=10,
+    min_samples_leaf=5,
+    random_state=42
+)
+```
+
+The model is trained using an 80/20 train-test split with stratification.
+
+## Machine Learning Workflow
+
+```text
+Kaggle Dataset
+       ↓
+Data Loading
+       ↓
+Data Cleaning & Preprocessing
+       ↓
+Exploratory Data Analysis
+       ↓
+Feature Selection
+       ↓
+Train-Test Split
+       ↓
+Decision Tree Classifier
+       ↓
+Model Evaluation
+       ↓
+Feature Importance
+       ↓
+Save Model as .pkl
+       ↓
+Flask Integration
+       ↓
+Web Application
+```
+
+## Features Used for Prediction
+
+The model uses the following customer information:
+
+* Account Length
+* International Plan
+* Voice Mail Plan
+* Number of Voicemail Messages
+* Total Day Minutes
+* Total Day Calls
+* Total Day Charge
+* Total Evening Minutes
+* Total Evening Calls
+* Total Evening Charge
+* Total Night Minutes
+* Total Night Calls
+* Total Night Charge
+* Total International Minutes
+* Total International Calls
+* Total International Charge
+* Customer Service Calls
+
+## Model Evaluation
+
+The model is evaluated using:
+
+* Accuracy
+* Classification Report
+* Confusion Matrix
+* Feature Importance
+
+The exact accuracy is generated when the notebook is executed.
+
+## Flask Web Application
+
+The trained Decision Tree model is saved as:
+
+```text
+churn_model.pkl
+```
+
+The Flask backend loads this model and accepts customer information from the HTML form.
+
+The prediction flow is:
+
+```text
+User
+ ↓
+HTML Form
+ ↓
+Flask Backend
+ ↓
+Decision Tree Model
+ ↓
+Prediction
+ ↓
+Result displayed on webpage
+```
+
+The application predicts either:
+
+```text
+Customer is likely to Churn
+```
+
+or:
+
+```text
+Customer is likely to Stay
+```
+
+## Project Structure
+
+```text
+telecom-customer-churn-decision-tree/
+│
+├── app.py
+│       Flask backend application
+│
+├── churn_model.pkl
+│       Trained Decision Tree model
+│
+├── requirements.txt
+│       Required Python libraries
+│
+├── README.md
+│       Project documentation
+│
+├── Telecom_Customer_Churn.ipynb
+│       Machine learning training and analysis
+│
+└── templates/
+    └── index.html
+            Frontend web interface
+```
+
+## How to Run the Project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/telecom-customer-churn-decision-tree.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd telecom-customer-churn-decision-tree
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Flask application
+
+```bash
+python app.py
+```
+
+### 5. Open the application
+
+Open the following URL in your browser:
+
+```text
+http://127.0.0.1:5000/
+```
+
+## Requirements
+
+The required libraries are listed in `requirements.txt`.
+
+```text
+Flask
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+```
+
+## Future Improvements
+
+* Improve the user interface
+* Add additional classification algorithms
+* Perform hyperparameter tuning
+* Add model comparison
+* Deploy the application online
+* Add probability-based churn prediction
+* Improve input validation
+
+## Disclaimer
+
+This project is developed for **educational and demonstration purposes**.
+
+The predictions generated by this application are machine learning predictions and should not be considered as guaranteed predictions of customer behavior.
+
+## Author
+
+**Yogesh Ankam**
+
+Computer Science & Engineering (AI & ML)
+DY Patil College of Engineering & Technology, Kolhapur
